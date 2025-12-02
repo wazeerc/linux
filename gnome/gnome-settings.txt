@@ -144,7 +144,7 @@ theme-name='__custom'
 [org/gnome/desktop/wm/keybindings]
 activate-window-menu=['<Control><Alt>space']
 close=['<Control>q']
-move-to-center=['<Control><Shift>period']
+move-to-center=['<Super><Shift>period']
 move-to-monitor-up=@as []
 move-to-workspace-1=['<Shift><Super>1']
 move-to-workspace-2=['<Shift><Super>2']
