@@ -6,7 +6,7 @@ window-is-maximized=false
 window-width=540
 
 [org/gnome/Loupe]
-show-properties=true
+show-properties=false
 
 [org/gnome/Ptyxis]
 audible-bell=false
@@ -20,7 +20,6 @@ new-tab-position='next'
 restore-window-size=false
 use-system-font=false
 visual-bell=false
-window-size=(uint32 76, uint32 23)
 
 [org/gnome/Ptyxis/Profiles/14efeec89646b411572d8106692c0879]
 cell-height-scale=1.4000000000000004
@@ -48,10 +47,11 @@ window-width=800
 custom-font='Maple Mono 12'
 highlight-current-line=false
 show-line-numbers=false
-show-map=false
+show-map=true
 show-right-margin=false
 spellcheck=false
-style-scheme='Adwaita-dark'
+style-scheme='solarized-light'
+style-variant='light'
 tab-width=uint32 4
 use-system-font=false
 
@@ -60,25 +60,21 @@ maximized=false
 panel-id='world'
 size=(870, 690)
 
-[org/gnome/control-center]
-last-panel='system'
-window-state=(640, 553, false)
+[org/gnome/desktop/a11y/interface]
+show-status-shapes=true
 
 [org/gnome/desktop/a11y/keyboard]
 mousekeys-enable=false
+togglekeys-enable=false
 
 [org/gnome/desktop/app-folders/folders/2ea75db8-31a3-47db-beba-de2523e21912]
-apps=['com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop']
+apps=['org.gnome.Extensions.desktop']
 name='Extensions'
 translate=false
 
 [org/gnome/desktop/app-folders/folders/Pardus]
 categories=['X-Pardus-Apps']
 name='X-Pardus-Apps.directory'
-translate=true
-
-[org/gnome/desktop/app-folders/folders/System]
-apps=['org.freedesktop.MalcontentControl.desktop']
 name='X-GNOME-Shell-System.directory'
 translate=true
 
@@ -100,17 +96,18 @@ current=uint32 0
 sources=[('xkb', 'us')]
 
 [org/gnome/desktop/interface]
-accent-color='blue'
+accent-color='slate'
 clock-show-seconds=false
 clock-show-weekday=true
 color-scheme='prefer-dark'
-cursor-theme='Fluent'
-document-font-name='Noto Sans 12'
+cursor-size=24
+cursor-theme='Adwaita'
+document-font-name='Inter 12'
 enable-animations=true
 enable-hot-corners=true
 font-antialiasing='rgba'
-font-hinting='full'
-font-name='Noto Sans 11'
+font-hinting='medium'
+font-name='Inter 11'
 gtk-theme='Adwaita'
 icon-theme='Adwaita'
 locate-pointer=true
@@ -131,11 +128,15 @@ tap-to-click=true
 two-finger-scrolling-enabled=true
 
 [org/gnome/desktop/privacy]
+remove-old-trash-files=false
 report-technical-problems=false
 
 [org/gnome/desktop/search-providers]
-disabled=['org.gnome.Boxes.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Characters.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Software.desktop']
-sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
+disabled=['org.gnome.Boxes.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Software.desktop', 'org.gnome.Characters.desktop']
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Software.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Characters.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Boxes.desktop']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 120
 
 [org/gnome/desktop/sound]
 event-sounds=false
@@ -144,6 +145,7 @@ theme-name='__custom'
 [org/gnome/desktop/wm/keybindings]
 activate-window-menu=['<Control><Alt>space']
 close=['<Control>q']
+maximize=@as []
 move-to-center=['<Super><Shift>period']
 move-to-monitor-up=@as []
 move-to-workspace-1=['<Shift><Super>1']
@@ -186,12 +188,20 @@ enable-smartcard-authentication=false
 
 [org/gnome/mutter]
 center-new-windows=true
-dynamic-workspaces=false
+dynamic-workspaces=true
+edge-tiling=false
 overlay-key='Super_L'
 workspaces-only-on-primary=true
 
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
 [org/gnome/nautilus/icon-view]
-default-zoom-level='small'
+default-zoom-level='small-plus'
+
+[org/gnome/nautilus/list-view]
+use-tree-view=true
 
 [org/gnome/nautilus/preferences]
 date-time-format='simple'
@@ -201,6 +211,7 @@ migrated-gtk-settings=true
 [org/gnome/nautilus/window-state]
 initial-size=(890, 550)
 initial-size-file-chooser=(890, 550)
+maximized=false
 
 [org/gnome/papers/default]
 annot-color='yellow'
@@ -208,26 +219,31 @@ continuous=true
 dual-page=false
 dual-page-odd-left=false
 enable-spellchecking=true
-show-sidebar=false
+show-sidebar=true
 sizing-mode='free'
-window-height=846
-window-width=941
-zoom=0.40137504939548102
+window-height=800
+window-maximized=false
+window-width=927
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-schedule-from=18.0
 night-light-schedule-to=8.0
-night-light-temperature=uint32 2700
+night-light-temperature=uint32 2200
 
 [org/gnome/settings-daemon/plugins/media-keys]
 control-center=['<Super>i']
-custom-keybindings=@as []
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 help=@as []
 home=['<Super>e']
-pause=['AudioMute']
+play=['AudioMute']
 www=['<Super>z']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>x'
+command='warp-terminal'
+name='Warp'
 
 [org/gnome/shell/app-switcher]
 current-workspace-only=false
@@ -238,7 +254,7 @@ hidden-apps=['org.gnome.Yelp.desktop', 'org.freedesktop.GnomeAbrt.desktop', 'nvi
 [org/gnome/shell/extensions/appindicator]
 icon-brightness=0.0
 icon-contrast=0.0
-icon-opacity=240
+icon-opacity=255
 icon-saturation=0.0
 icon-size=0
 legacy-tray-enabled=true
@@ -250,17 +266,18 @@ pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'na
 settings-version=2
 
 [org/gnome/shell/extensions/blur-my-shell/appfolder]
+blur=true
 brightness=0.5
 sigma=25
 style-dialogs=3
 
 [org/gnome/shell/extensions/blur-my-shell/applications]
-blur=false
+blur=true
 blur-on-overview=false
 brightness=1.0
 dynamic-opacity=false
 opacity=255
-sigma=25
+sigma=10
 whitelist=['dev.warp.Warp']
 
 [org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
@@ -313,10 +330,13 @@ sigma=25
 [org/gnome/shell/extensions/clipboard-indicator]
 case-sensitive-search=true
 clear-on-boot=false
-confirm-clear=true
+confirm-clear=false
 disable-down-arrow=true
+display-mode=0
 history-size=12
+move-item-first=true
 next-history-clear=-1
+notify-on-copy=false
 notify-on-cycle=false
 paste-on-select=true
 preview-size=24
@@ -367,11 +387,60 @@ show-trash=true
 show-windows-preview=false
 transparency-mode='DEFAULT'
 
-[org/gnome/shell/extensions/lockscreen-extension]
-gradient-direction-1='none'
+[org/gnome/shell/extensions/emoji-copy]
+active-keybind=true
+always-show=false
 
-[org/gnome/shell/extensions/net/gfxmonk/impatience]
-speed-factor=0.5
+[org/gnome/shell/extensions/just-perfection]
+accent-color-icon=true
+accessibility-menu=true
+activities-button=true
+alt-tab-icon-size=0
+alt-tab-small-icon-size=0
+alt-tab-window-preview-size=0
+animation=4
+background-menu=true
+calendar=true
+clock-menu=true
+clock-menu-position-offset=0
+controls-manager-spacing-size=0
+dash=true
+dash-icon-size=40
+double-super-to-appgrid=false
+events-button=false
+invert-calendar-column-items=false
+keyboard-layout=true
+osd=true
+panel=true
+panel-button-padding-size=0
+panel-icon-size=14
+panel-in-overview=true
+panel-indicator-padding-size=0
+panel-notification-icon=true
+panel-size=28
+power-icon=true
+quick-settings=true
+quick-settings-airplane-mode=false
+quick-settings-dark-mode=false
+quick-settings-night-light=false
+ripple-box=true
+search=true
+show-apps-button=false
+startup-status=1
+support-notifier-type=0
+theme=true
+weather=false
+window-demands-attention-focus=true
+window-picker-icon=true
+window-preview-caption=true
+window-preview-close-button=true
+workspace=true
+workspace-background-corner-size=0
+workspace-peek=false
+workspace-popup=true
+workspace-switcher-size=0
+workspaces-in-app-grid=true
+world-clock=false
 
 [org/gnome/shell/extensions/switcher]
 activate-immediately=true
@@ -404,6 +473,7 @@ focus-hint-color='rgb(237,91,0)'
 import-layout-examples=false
 last-version-installed=53
 maximize-with-gap=true
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.desktop.wm.keybindings.maximize': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
 restore-window=@as []
 search-popup-layout=@as []
 single-screen-gap=8
@@ -435,6 +505,19 @@ window-gap=8
 [org/gnome/shell/extensions/user-theme]
 name=''
 
+[org/gnome/shell/extensions/vitals]
+fixed-widths=true
+hide-icons=false
+hide-zeros=true
+icon-style=1
+menu-centered=false
+show-battery=false
+update-time=30
+
+[org/gnome/shell/extensions/window-list]
+embed-previews=false
+grouping-mode='always'
+
 [org/gnome/shell/keybindings]
 show-screen-recording-ui=['<Shift><Super>r']
 show-screenshot-ui=['<Shift><Super>s']
@@ -449,11 +532,11 @@ toggle-quick-settings=['<Super>a']
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1764666362
+check-timestamp=int64 1765863068
 first-run=false
-flatpak-purge-timestamp=int64 1764667190
+flatpak-purge-timestamp=int64 1765854858
 install-timestamp=int64 1764494697
-packagekit-historical-updates-timestamp=uint64 1764494697
+packagekit-historical-updates-timestamp=uint64 1765487169
 update-notification-timestamp=int64 1764493391
 
 [org/gnome/system/location]
@@ -475,7 +558,7 @@ location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=163
+sidebar-width=167
 sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
